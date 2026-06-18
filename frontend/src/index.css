@@ -1,0 +1,319 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+/* layout */
+:root {
+  --primary: #1aac83;
+  --error: #e7195a;
+}
+body {
+  background: #f1f1f1;
+  margin: 0;
+  font-family: "Poppins";
+}
+header {
+  background: #fff;
+}
+header .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header a {
+  color: #333;
+  text-decoration: none;
+}
+.pages{
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+
+/* homepage */
+.home {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 100px;
+}
+.workout-details {
+  background: #fff;
+  border-radius: 4px;
+  margin: 20px auto;
+  padding: 20px;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+.workout-details h4 {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  color: var(--primary);
+}
+.workout-details p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
+}
+.workout-details span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 50%;
+  color: #333;
+}
+
+/* new workout form */
+label, input {
+  display: block;
+}
+input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+form button {
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+}
+div.error {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  margin: 20px 0;
+}
+input.error {
+  border: 1px solid var(--error);
+}
+
+
+/* navbar */
+nav {
+  display: flex;
+  align-items: center;
+}
+nav a {
+  margin-left: 10px;
+}
+nav button {
+  background: #fff;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-family: "Poppins";
+  cursor: pointer;
+  font-size: 1em;
+  margin-left: 10px;
+}
+/* auth forms */
+form.signup, form.login {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+
+/*  gemini ai */
+
+/* --- Inline Exercise Editing Additions --- */
+
+/* Target the container wrapping both controls */
+.workout-details .actions {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+}
+
+/* Clear static position of singular spans inside actions block */
+.workout-details .actions span {
+  position: static; 
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 50%;
+  color: #444;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Hover micro-interactions */
+.workout-details .actions .delete-icon:hover {
+  background: var(--error);
+  color: #fff;
+}
+
+.workout-details .actions .edit-icon:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Form container overrides for inline look */
+.edit-form h4 {
+  margin-bottom: 15px;
+}
+.edit-form label {
+  margin-top: 8px;
+  font-size: 0.85em;
+  font-weight: 500;
+}
+.edit-form input {
+  margin-top: 4px;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+.edit-form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+.edit-form-buttons button {
+  padding: 8px 16px;
+  font-size: 0.9em;
+}
+.edit-form-buttons .cancel-btn {
+  background: #e2e2e2;
+  color: #333;
+}
+.edit-form-buttons .cancel-btn:hover {
+  background: #d4d4d4;
+}
+
+/* added user profile feature to the page */
+
+/* Navbar Profile Layout Extensions */
+.nav-profile-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.avatar-circle {
+  width: 36px;
+  height: 36px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.2s ease;
+}
+.avatar-circle:hover {
+  border-color: #333;
+}
+
+
+/* added user profile css  */
+/* --- Profile Layout --- */
+.profile-page {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.profile-form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+
+.grid-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Custom Selection Dropdown Override */
+select {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: "Poppins";
+  background: #fff;
+}
+
+/* Health Summary Metrics Card */
+.health-summary-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+  height: fit-content;
+}
+
+.summary-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.summary-stat span {
+  color: #666;
+  font-size: 0.95em;
+}
+
+.summary-stat strong {
+  font-size: 1.4em;
+  color: var(--primary);
+}
+
+.bmi-badge {
+  font-weight: 600;
+  background: #f1f1f1;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.hint-text {
+  font-size: 0.8em;
+  color: #888;
+  line-height: 1.4;
+  margin-top: 20px;
+}
+
+.success-msg {
+  padding: 10px;
+  background: #eefdf7;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+/* added style to username in the navbar */
+.username-text {
+  font-weight: 500;
+  color: #333;
+  margin-right: 5px;
+}
