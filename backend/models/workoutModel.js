@@ -18,6 +18,12 @@ const workoutSchema = new Schema({
     user_id: {
         type: String,
         required: true
+    },
+    // NEW FIELD FOR WEEKLY PLANNER
+    dayOfWeek: {
+        type: String,
+        enum: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        required: true
     }
 },{timestamps: true})
 

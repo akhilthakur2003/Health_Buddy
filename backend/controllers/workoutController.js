@@ -36,7 +36,7 @@ const getWorkout =async (req,res)=>{
 
 // create a new workout
 const createWorkout = async (req, res)=>{
-    const {title, load, reps} = req.body
+    const {title, load, reps, dayOfWeek} = req.body
     let emptyFields =[]
 
     if(!title)
@@ -51,6 +51,10 @@ const createWorkout = async (req, res)=>{
     {
         emptyFields.push('reps')
     }
+    if(!dayOfWeek)
+    {
+        emptyFields.push('dayOfWeek')
+    }
     
     if(emptyFields.length >0)
     {
@@ -62,7 +66,7 @@ const createWorkout = async (req, res)=>{
         const user_id = req.user._id
 
         // add doc to db
-        const workout=await Workout.create({title,load,reps, user_id})
+        const workout=await Workout.create({title,load,reps, user_id,dayOfWeek})
         res.status(200).json(workout)
     } catch(error){
         res.status(400).json({error: error.message})

@@ -317,3 +317,57 @@ select {
   color: #333;
   margin-right: 5px;
 }
+
+
+/* --- Day-of-the-Week Selection Ribbon --- */
+.home-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.days-ribbon {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  background: #fff;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+
+.day-btn {
+  flex: 1;
+  background: #f1f1f1;
+  color: #555;
+  border: none;
+  padding: 12px;
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 0.95em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.day-btn:hover {
+  background: #e2e2e2;
+  color: #333;
+}
+
+.day-btn.active {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+}
+
+.empty-state {
+  background: #fff;
+  padding: 40px;
+  text-align: center;
+  border-radius: 4px;
+  color: #888;
+  border: 2px dashed #ddd;
+  margin-top: 20px;
+}
