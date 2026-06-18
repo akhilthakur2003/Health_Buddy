@@ -32,7 +32,7 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../frontend/build')))
 
     // Any request that doesn't hit an API route gets redirected to index.html
-    app.get('.*', (req, res) => {
+    app.get('/:all*', (req, res) => {
         res.sendFile(path.resolve(__dirname, '../frontend', 'build', 'index.html'))
     })
 }
