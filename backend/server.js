@@ -23,6 +23,23 @@ app.use('/api/user',userRoutes)
 //     res.json({mssg: 'Welcome akhil '})
 // })
 
+const path = require('path')
+
+//Production deployment middleware
+// Serve frontend build files in production
+if (process.env.NODE_ENV === 'production') {
+    // Point Express to your React build folder
+    app.use(express.static(path.join(__dirname, '../frontend/build')))
+
+    // Any request that doesn't hit an API route gets redirected to index.html
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, '../frontend', 'build', 'index.html'))
+    })
+}
+
+
+
+
 //database  connect
 mongoose.connect(process.env.MONGO_URI)
     .then(()=>{  
