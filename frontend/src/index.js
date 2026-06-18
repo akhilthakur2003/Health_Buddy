@@ -16,3 +16,7 @@ root.render(
     </AuthContextProvider>
   </React.StrictMode>
 );
+
+
+
+// "test": "echo \"Error: no test specified\" && exit 1"
